@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Tracking by Wael</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-coins"></i> Credit Tracking by Wael</h1>
+        </header>
+        <main>
+            <section class="form-section">
+                <form id="debtForm">
+                    <input type="text" id="name" placeholder="Debtor's Name" required>
+                    <input type="number" id="amount" placeholder="Amount (TND)" step="0.001" min="0" required>
+                    <input type="text" id="description" placeholder="Description (Optional)">
+                    <button type="submit">Add Debt</button>
+                </form>
+            </section>
+            <section class="summary-section">
+                <div class="summary-card">
+                    <div id="totalDebts">0</div>
+                    <p>Total Debts</p>
+                </div>
+                <div class="summary-card">
+                    <div id="totalAmount">0.000 TND</div>
+                    <p>Total Amount</p>
+                </div>
+            </section>
+            <section class="list-section">
+                <div class="list-controls">
+                    <input type="text" id="searchInput" placeholder="Search by name or description">
+                    <select id="sortSelect">
+                        <option value="dateDesc">Date (Newest First)</option>
+                        <option value="dateAsc">Date (Oldest First)</option>
+                        <option value="amountDesc">Amount (Highest First)</option>
+                        <option value="amountAsc">Amount (Lowest First)</option>
+                        <option value="nameAsc">Name (A-Z)</option>
+                        <option value="nameDesc">Name (Z-A)</option>
+                    </select>
+                    <button id="exportBtn"><i class="fas fa-file-export"></i> Export</button>
+                </div>
+                <div id="debtList" class="debt-grid"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

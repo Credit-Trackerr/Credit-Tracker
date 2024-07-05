@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #6200ea;
+    --secondary-color: #00c853;
+    --background-color: #f5f5f5;
+    --text-color: #333333;
+    --card-background: #ffffff;
+    --accent-color-1: #ff4081;
+    --accent-color-2: #00bcd4;
+    --accent-color-3: #ffd600;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-section form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--card-background);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+input, select, button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(98, 0, 234, 0.2);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #7c4dff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.summary-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background-color: var(--card-background);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex: 1;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.summary-card div {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.list-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#searchInput, #sortSelect {
+    flex-grow: 1;
+}
+
+.debt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.debt-card {
+    background-color: var(--card-background);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.debt-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.debt-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.debt-card p {
+    margin: 0.25rem 0;
+}
+
+.debt-card .amount {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.debt-card .date {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.debt-card .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.debt-card .actions button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.paid {
+    opacity: 0.6;
+}
+
+.paid .amount {
+    color: var(--accent-color-2);
+}
+
+@media (max-width: 768px) {
+    .form-section form, .list-controls {
+        flex-direction: column;
+    }
+    
+    .summary-section {
+        flex-direction: column;
+    }
+    
+    .summary-card {
+        margin: 0.5rem 0;
+    }
+}
